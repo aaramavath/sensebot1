@@ -1,0 +1,315 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,100..900&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Inter', sans-serif;
+}
+
+body {
+    display: flex; 
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    background: radial-gradient(circle at 20% 80%, #FF66A1, transparent),  
+                radial-gradient(circle at 80% 20%, #7556D9, transparent),  
+                radial-gradient(circle at 60% 50%, #FF6A3D, transparent),  
+                radial-gradient(circle at 40% 30%, #FFD244, transparent),  
+                radial-gradient(circle at 70% 90%, #69D244, transparent),  
+                radial-gradient(circle at 30% 40%, #5A87FF, transparent);  
+    background-blend-mode: screen; 
+}
+
+.chatbot-fs {
+    position: relative;
+    width: 800px; 
+    height: 500px; 
+    overflow: hidden; 
+    background: #fff; 
+    border-radius: 20px; 
+    box-shadow: 0 0 128px 0 rgba(0, 0, 0, 0.1), 0 32px 64px -48px rgba(0, 0, 0, 0.5);
+}
+
+.chat-header {
+    display: flex;
+    align-items: center;
+    background: #f0ecece0; 
+    padding: 15px 22px;
+    justify-content: space-between;
+    box-shadow: 0 0 128px 0 rgba(0, 0, 0, 0.1), 0 32px 64px -48px rgba(0, 0, 0, 0.5);
+}
+
+.header-info {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+}
+
+.header-info .chatbot-logo {
+    width: 35px;
+    height: 35px;
+    padding: 6px;
+    flex-shrink: 0;
+    fill: black; 
+    background: rgba(219, 241, 219, 0.966); 
+    border-radius: 50%;
+}
+
+.header-info .logo-text {
+    color: black;
+    font-size: 1.31rem;
+    font-weight: 600;
+}
+
+.chat-header #close-chatbot {
+    border: none;
+    color: black;
+    height: 40px;
+    width: 40px;
+    margin-right: -10px;
+    font-size: 1.9rem;
+    border-radius: 50%;  
+    padding-top: 2px;
+    cursor: pointer;
+    background: none;
+    transition: 0.2s ease;
+}
+
+.chat-header #close-chatbot:hover {
+    background: rgba(219, 241, 219, 0.966);
+}    
+
+.chat-body {
+    padding: 25px 22px;
+    display: flex;
+    flex-direction: column; 
+    height: 360px; /* Adjusted for the footer */
+    overflow-y: auto;
+    margin-bottom: 0; /* Remove margin to avoid overlap */
+}
+
+.chat-body .message {
+    display: flex;
+    gap: 11px;
+    align-items: center;
+}
+
+.chat-body .bot-message .bot-avatar {
+    width: 35px;   
+    height: 35px;
+    padding: 6px;
+    flex-shrink: 0;
+    fill: black;
+    background: rgba(219, 241, 219, 0.966);
+    border-radius: 50%;
+    align-self: flex-end;
+    margin-bottom: 2px;
+}
+
+.chat-body .user-message {
+    flex-direction: column;  
+    align-items: flex-end;
+}
+
+.chat-body .message .message-text {
+    padding: 12px 16px;
+    max-width: 75%;
+    font-size: 0.95rem;
+    background: rgba(212, 230, 212, 0.92);
+}
+
+.chat-body .bot-message .message-text {
+    background: rgb(242, 241, 241);
+    border-radius: 13px 13px 13px 3px;
+    color: black;
+}
+
+.chat-body .user-message .message-text {
+    color: black;
+    background: rgba(219, 241, 219, 0.966);
+    border-radius: 13px 3px 13px 3px;
+}
+
+.chat-footer {
+    position: relative; /* Changed to relative to avoid overlap */
+    width: 100%;
+    bottom: 0;
+    padding: 15px 22px;
+    background: rgba(255, 255, 255, 0.8); /* Slightly transparent */
+}
+
+.chat-footer .chat-form {
+    display: flex;
+    align-items: center;
+    background: #fff;
+    border-radius: 32px;
+    outline: 1px solid rgba(143, 141, 141, 0.966);
+
+}
+
+.chat-footer .chat-form:focus-within {
+    outline: 1.5px solid rgb(65, 63, 63);
+}
+
+.chat-footer .message-input {
+    border: none;
+    width: 100%;
+    outline: none;
+    resize: none;
+    border-radius: inherit;
+    height: 47px;
+    padding: 4px 0 13px 18px;
+    font-size: 0.95rem;
+}
+
+.chat-footer .chat-controls {
+    display: flex;
+    height: 47px;
+    gap: 3px;
+    align-items: center;
+    padding-right: 6px;
+}
+
+.chat-footer .chat-controls #send-message {
+    height: 35px;
+    width: 35px;
+    border: none;
+    cursor: pointer;
+    background: rgba(219, 241, 219, 0.966);
+    color: black;
+    border-radius: 50%;
+    font-size: 1.15rem;
+    transition: 0.2s ease;
+}
+
+.chat-footer .chat-controls #send-message:hover {
+    background: rgba(219, 241, 219, 0.866);
+}
+/*added*/ 
+#voice-button .material-symbols-outlined {
+    font-size: 18px; /* adjust this number if you want even smaller */
+}
+
+.chat-footer .chat-controls #voice-button {
+    height: 30px;
+    width: 30px;
+    border: none;
+    cursor: pointer;
+    background: rgba(219, 241, 219, 0.966);
+    color: black;
+    border-radius: 50%;
+    transition: 0.2s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0;
+    font-size: 15px; /* adjust if you want it even smaller */
+}
+
+.chat-footer .chat-controls #voice-button:hover {
+    background: rgba(219, 241, 219, 0.866);
+}
+/* VOICE OVERLAY */
+/* ADDED */
+.voice-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(255, 255, 255, 0.797); /* <- this is the white tint */
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 9999;
+    transition: opacity 0.3s ease;
+}
+
+.voice-overlay.hidden {
+    display: none;
+}
+
+/* Exit Button (Top Right) */
+.voice-overlay .exit-button {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    color:black;
+    border: none;
+    font-size: 1.2rem;
+    border-radius: 50%;
+    height: 40px;
+    width: 40px;
+    cursor: pointer;
+}
+
+/* Rainbow Ball ADDED BY GROK */
+.rainbow-ball {
+    width: 170px;
+    height: 170px;
+    border-radius: 50%;
+    background: radial-gradient(circle at 20% 80%, #E64D8A, transparent),
+            radial-gradient(circle at 80% 20%, #5C41B3, transparent),
+            radial-gradient(circle at 60% 50%, #E6502F, transparent),
+            radial-gradient(circle at 40% 30%, #E6B82E, transparent),
+            radial-gradient(circle at 70% 90%, #54A82E, transparent),
+            radial-gradient(circle at 30% 40%, #4666CC, transparent);
+    /*background: radial-gradient(circle at 20% 80%, #FF66A1, transparent),  
+                radial-gradient(circle at 80% 20%, #7556D9, transparent), 
+                radial-gradient(circle at 60% 50%, #FF6A3D, transparent),  
+                radial-gradient(circle at 40% 30%, #FFD244, transparent),  
+                radial-gradient(circle at 70% 90%, #69D244, transparent),  
+                radial-gradient(circle at 30% 40%, #5A87FF, transparent);*/
+    background-blend-mode: screen;
+    animation: none;
+    transition: transform 0.1s ease;
+}
+
+/* AI Response Pulsing Animation (slower, rhythmic) */
+@keyframes pulse-ai {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.08); }
+    100% { transform: scale(1); }
+}
+
+/* Voice-Sensitive Vibration Animation */
+@keyframes voice-vibrate {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.1); }
+    100% { transform: scale(1); }
+}
+
+
+
+/* Voice Status Box doenst work*/
+/* Add this to your CSS file */
+.rainbow-ball {
+    /* ...existing styles... */
+    position: relative; /* Add this line if not present */
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+#voice-status-box {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    top: calc(100% + 16px);
+    min-width: 120px;
+    padding: 10px 20px;
+    border-radius: 18px;
+    background: rgba(255,255,255,0.7);
+    backdrop-filter: blur(8px);
+    box-shadow: 0 2px 12px rgba(0,0,0,0.08);
+    color: #222;
+    font-weight: 500;
+    font-size: 1rem;
+    text-align: center;
+    pointer-events: none;
+    z-index: 100;
+    display: none;
+}
