@@ -23,8 +23,9 @@ body {
 
 .chatbot-fs {
     position: relative;
-    width: 800px; 
-    height: 500px; 
+    width: 100%; 
+    max-width: 380px;
+    height: 500px;
     overflow: hidden; 
     background: #fff; 
     border-radius: 20px; 
@@ -313,3 +314,12 @@ body {
     z-index: 100;
     display: none;
 }
+@media (max-width: 600px) {
+  .chatbot-fs {
+    width: 95%;
+    max-width: 360px;
+    height: 70vh;
+    border-radius: 16px;
+  }
+}
+
