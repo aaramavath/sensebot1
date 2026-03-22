@@ -108,8 +108,7 @@ const generateBotResponse = async (userMessage) => {
         return responseText;
     } catch (error) {
         console.error("Gemini API error:", error.message);
-        return isMentalHealthQuestion(userMessage) ? "I'm here to help you manage stress and relax! Try taking a few deep breaths and tell me how you're feeling." 
-    : "I’m SenseBot! You can talk to me about stress, focus, sleep, or relaxation tips.";
+        return "Something went wrong, but I'm still here to help. Try asking about stress, sleep, or focus.";
     }
 };
 
